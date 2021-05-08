@@ -26,7 +26,7 @@ baseurl: # the subpath of your site, e.g. "/blog"
 repository: "chltjdrhd777/chltjdrhd777.github.io"
 teaser: "/assets/images/meme.png"
 logo: "/assets/images/logo.png"
-masthead_title: "앤더슨씨, 개발하시는건가요!"
+masthead_title: "앤더손씨, 개발하시는건가요!"
 # breadcrumbs            : false # true, false (default)
 words_per_minute: 200
 comments:
@@ -95,7 +95,7 @@ analytics:
 author:
   name: "Anderson"
   avatar: "/assets/images/avatar.jpg"
-  bio: "제 이름은 앤더손, 모쏠이죠"
+  bio: ""제 이름은 앤더손, 모쏠이죠""
   location: "Mother Nature"
   email: chltjdrhd777@gmail.com
   links:
@@ -123,7 +123,7 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: chltjdrhd777@gmail.com
+      #url: 
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
