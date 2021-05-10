@@ -2,7 +2,11 @@
 
 항상 느끼는 거지만 기본 개념이라도 언제나 다시금 공부해야 할 것이 있고, 배워야 할 것이 많다고 생각이 드는 날...
 
-# 1. 변수를 숫자로 바꾸는 방법
+</br>
+
+---
+
+# 변수를 숫자로 바꾸는 방법
 
 방법은 크게 세가지가 있다
 
@@ -21,108 +25,55 @@ Number() 은 어떤 주어진 내용에 대해 전체적으로 확인을 해서 
 추가로,
 
 ```javascript
-console.log(Number(""), Number(null), Number(undefined));
+console.log(Number("")); //0
+console.log(Number(null));//0
+console.log(Number(undefined));//NaN
+console.log(Number({});//NaN
+console.log(Number([]);//0
+console.log(Number(true));//1
+console.log(Number(false));//0
 ```
 
-null과 ""
+라는 특이한 형태를 보인다.
+
 <br>
 
-# 3. 번호 있는 리스트 작성
+## 둘째. _parseInt()_
 
-1. 리스트1
-2. 리스트2
-3. 리스트3
+요놈도 안에 문자를 넣으면 숫자로 돌려주긴 한다.<br>근데 충요한 것은, 요놈은 처음부터 시작해서 **숫자같이 생긴놈이 끝나는 지점** 까지의 **_정수_** 를 반환한다
 
-# 4. 이텔릭체(기울어진 글씨) 작성
+<br>
+<br>
+따라서,
 
-_텍스트_
+```javascript
+console.log(parseInt("2")); //2
+console.log(parseInt("2.3")); //2
+console.log(parseInt("2.3asb")); //2
+```
 
-# 5. 굵은 글씨 작성
+그러나, 맨 앞에부터 숫자가 아니게 생긴 게 오면 NaN(not a number)을 내뱉는다. 참고로, string 형태로 집어넣어도 NaN이다
 
-**텍스트**
+```javascript
+console.log(parseInt(""));//NaN
+console.log(parseInt("{}"));//NaN
+console.log(parseInt("[]"));//NaN
+console.log(parseInt("a334");//NaN
+console.log(parseInt([]);//NaN
+console.log(parseInt({});//NaN
+console.log(parseInt(null);//NaN
+console.log(parseInt(undefined);//NaN
+```
 
-# 6. 인용
+# 셋째. _parseFloat()_
 
-> 인용1
-
-> 인용2
->
-> > 인용안의 인용
-
-# 7. 수평선 넣기
+이녀석은 parseInt()와 행동은 똑같은데 차이가 있다. 그것은 실수(real number) 까지 내뱉는다는 점이다.
+실수... 수학적으로 말하면 유리수니 무리수니 합쳐진거다! 라는데 그냥 소숫점 들러붙어있는거까지 나온다고 생각하면 된다.
+</br>그리고 역시 처음에 숫자같이 생기지 않은 놈이 오면
+NaN 을 내뱉는다.
 
 ---
 
-# 8. 링크 달기
-
-(1) 인라인 링크
-
-[블로그 주소](https://lsh424.tistory.com/)
-
-(2) 참조 링크
-
-[블로그 주소][blog]
-
-[blog]: https://lsh424.tistory.com/
-
-# 9. 이미지 추가하기
-
-![이탈리아 포지타노](https://user-images.githubusercontent.com/31477658/85016059-f962aa80-b1a3-11ea-8c91-dacba2666b78.jpeg)
-
-### 이미지 사이즈 조절
-
-<img src="https://user-images.githubusercontent.com/31477658/85016059-f962aa80-b1a3-11ea-8c91-dacba2666b78.jpeg"  width="700" height="370">
-
-### 이미지 파일로 추가하기
-
-<img src="Capri_Island.jpeg" width="700">
-
-# 10. 코드블럭 추가하기
-
-```swift
-public struct CGSize {
-  public var width: CGFloat
-  public var heigth: CGFloat
-  ...
-}
-```
-
-# etc
-
-**텍스트 굵게**  
-~~텍스트 취소선~~
-
-### [개행]
-
-스페이스바를 통한 문장개행  
-스페이스바를 통한 문장개행
-
-br태그를 사용한 문장개행
-<br>
-<br>
-br태그를 사용한 문장개행
-
-### [체크박스]
-
-다음과 같이 체크박스를 표현 할 수 있습니다.
-
-- [x] 체크박스
-- [ ] 빈 체크박스
-- [ ] 빈 체크박스
-
-### [이모지 넣기]
-
-❤️💜💙🤍
-
-### [표 넣기]
-
-| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
-| :-------- | :---------: | ----------: |
-| 내용1     |    내용2    |       내용3 |
-| 내용1     |    내용2    |       내용3 |
-
-<br>
-
-### 정리내용
-
-[정리 내용 보기](https://lsh424.tistory.com/37)
+오늘은 이정도로 포스팅하고
+</br>
+굳이 벨로그 냅두고 깃블로그 하는것도 웃기긴 하지만, 내 개인적으로 나중에 링크도 커스터마이징해서 달고싶고, 여러 기능들도 만들어서 달아보고 하고싶은 욕심이 있어서 깃블로그를 선택하게 되었다. 시간이 지나면 지날수록 발전하는 깃블로그의 모습을 보며 뿌듯해할지도 모르겠다.헤헤
