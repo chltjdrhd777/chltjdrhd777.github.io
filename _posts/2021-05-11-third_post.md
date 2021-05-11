@@ -2,62 +2,46 @@
 
 ![javasciprt](https://img.shields.io/badge/javascript-up%20to%20date-yellow)
 
-코드를 테스트 하던 도중 재미난 것을 발견해서 적어봅니다
-
 ---
 
-## Closure & context
+## Closure
 
 일반적으로 Clousre이라 함은 함수 내부에 또다른 함수가 존재하는 형태를 말합니다.  
 이런 형태가 나오게 된 것은 javascript의 혼돈의 카오스적인 시기를 반영한 이유가 큽니다. 예를 들면
 
----
+```javascript
+function test(hello) {
+  return "hi";
+}
 
-## Features
+function dontTouchMe(really) {
+  return "dont touch";
+}
+```
 
-- Material Design
-- Emoji support
-- User @mentioning
-- Private messaging
-- Message deleting (for admins)
-- Ability to kick/ban users (for admins)
-- See other user's IPs (for admins)
-- Other awesome features yet to be implemented
+요로코롬 전역적으로 선언한 함수 두개가 있다고 가정합시다.
 
-.
-![User Features](http://i.imgur.com/WbF1fi2.png)
+우리는 test 함수에는 누구든 접근하고 싶지만 dontTouchMe 함수에는 함수로 손대지 못하게 하고 싶습니다.
 
-.
-![Admin Features](http://i.imgur.com/xQFaadt.png)
+근데, 저렇게 전역적으로 선언해버리면 저 함수가 아무리 "날 손대는 것, 멈춰!" 라고 해봐야 아주 쉽게 만지작 할 수 있게 되는 겁니다.
 
-#### There are 3 admin levels:
+하지만 만약
 
-- **Helper:** Can delete chat messages
-- **Moderator:** The above plus the ability to kick and ban users
-- **Administrator:** All the above plus send global alerts and promote/demote users
+```javascript
+function test(hello) {
+  function dontTouchMe(really) {
+    return "dont touch";
+  }
 
----
+  return "hi";
+}
+```
 
-## Setup
+와 같은 케이스는 어떨까요?
 
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
+전역적으로 설정되어 있는 `test` 함수에는 누구든지 접근을 할 수 있지만, 그 내부에 있는 clousure "dont touch me"에는 test 함수를 실행시키기 전까진 접근을 할 수 있는 방법이 없습니다.
 
-You might want to look into `config.json` to make change the port you want to use and set up a SSL certificate.
+> 이것이 바로 closure의 위대한 힘입니다(두둥!)
 
----
-
-## Usage
-
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
-
-Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:3000
-
-To give yourself administrator permissions on the chat, you will have to type `/role [your-name]` in the app console.
-
----
-
-## License
-
-> You can check out the full license [here](https://github.com/IgorAntun/node-chat/blob/master/LICENSE)
-
-This project is licensed under the terms of the **MIT** license.
+물론 최근에는 문법적 설탕이라고 할 수 있는 **class**가 prototype이나, closure 뿐만 아니라,  
+Readonly, static, public 등과 같은 강력하고 편리한 기능들을 갖추게 되면서 클래스를 사용하는 경우가 많아졌습니다.
