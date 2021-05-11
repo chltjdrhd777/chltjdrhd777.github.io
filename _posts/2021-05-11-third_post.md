@@ -45,3 +45,7 @@ function test(hello) {
 
 물론 최근에는 문법적 설탕이라고 할 수 있는 **class**가 prototype이나, closure 뿐만 아니라,  
 Readonly, static, public 등과 같은 강력하고 편리한 기능들을 갖추게 되면서 클래스를 사용하는 경우가 많아졌습니다.
+
+---
+
+다음 포스팅엔 class와 markdown의 이미지 첨부, 그리고 gitblog의 디자인 업데이트를 진행하 예정입니다
