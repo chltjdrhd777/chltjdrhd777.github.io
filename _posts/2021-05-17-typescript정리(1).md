@@ -10,7 +10,7 @@
 
 ---
 
-## 1. tuple type
+## 1. Tuple type
 
 ```ts
 const tupple: [string, number] = ["element1", 2];
@@ -20,7 +20,7 @@ const tupple: [string, number] = ["element1", 2];
 
 ---
 
-## 2. union
+## 2. Union
 
 ```ts
 const union: string | number | "can be" = "value1";
@@ -30,7 +30,7 @@ const union: string | number | "can be" = "value1";
 
 ---
 
-## 3. enum
+## 3. Enum
 
 ```ts
 enum GreetingEnums {
@@ -52,7 +52,7 @@ enum은 객체와 거의 유사하다. 마치 const로 선언한 고정값들을
 
 ---
 
-## 4. literaltype
+## 4. Literal type
 
 ```ts
 const literal: "Literal 1" | "Literal 2" = "Literal 1";
