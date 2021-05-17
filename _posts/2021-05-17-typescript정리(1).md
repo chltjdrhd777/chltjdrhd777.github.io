@@ -73,3 +73,30 @@ const literal: Literals = "Literal 1";
 통로(alias) 라는 의미처럼, 처렇게 바깥에 "type" 이나 "interface" 형태로 alias를 설정한 후, 이를 적용하는 것을 말한다.
 
 일반적으로 대부분의 타입 정의는 alias형태를 자주 쓴다.
+
+---
+
+## fin. any vs unknown
+
+1. any : 아무거나 다 받아들이고, 아무데나 다 할당될 수 있다.
+2. unknown : 아무거나 다 받아들이나, 아무데나 할당될 수는 없다.
+
+ex.
+
+```ts
+const anyType: any = "string";
+const unknownType: unknown = "string";
+
+let acceptAny: string;
+
+acceptAny = anyType; // ok;
+acceptAny = unknownType; // err
+
+if (typeof unkownType === "string") {
+  acceptAny = unknownType; // ok, now I know what you are
+}
+```
+
+위에서 보는 것처럼, unknown은 조금 더 strict 한 any다.
+
+그러므로 any를 쓸 상황이 필요하면 우선 unknown을 고려하도록 한다.
