@@ -13,9 +13,7 @@
 ## 1. tuple type
 
 ```ts
-type TuppleArray = [string, number];
-
-const tupple: TuppleArray = ["element1", 2];
+const tupple: [string, number] = ["element1", 2];
 ```
 
 마치 튜브처럼, 딱 저 형태만 취해라. 라는게 튜플이다
@@ -25,9 +23,7 @@ const tupple: TuppleArray = ["element1", 2];
 ## 2. union
 
 ```ts
-type UnionTypes = string | number | "can be";
-
-const union: UnionTypes = "value1";
+const union: string | number | "can be" = "value1";
 ```
 
 선택권을 주어주고, 그 중에서 선택하는 개념이다.
@@ -56,12 +52,24 @@ enum은 객체와 거의 유사하다. 마치 const로 선언한 고정값들을
 
 ---
 
-## fin. literaltype
+## 4. literaltype
 
 ```ts
-type Literals = "Literal 1" | "Literal 2";
+const literal: "Literal 1" | "Literal 2" = "Literal 1";
+```
+
+union에서 그 값을 포괄적인 string, number과 같은 것이 아니라 명확하게 지정해놓는 것을 의미한다.
+
+---
+
+## 5. Type Alias
+
+```ts
+type Listerals = "Literal 1" | "Literal 2";
 
 const literal: Literals = "Literal 1";
 ```
 
-union에서 그 값을 포괄적인 string, number과 같은 것이 아니라 명확하게 지정해놓는 것을 의미한다.
+통로(alias) 라는 의미처럼, 처렇게 바깥에 "type" 이나 "interface" 형태로 alias를 설정한 후, 이를 적용하는 것을 말한다.
+
+일반적으로 대부분의 타입 정의는 alias형태를 자주 쓴다.
